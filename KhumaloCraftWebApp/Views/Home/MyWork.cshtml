@@ -1,0 +1,351 @@
+﻿@{
+    ViewData["Title"] = "My Work";
+}
+
+<div class="container">
+    <h1 class="text-center mb-4">My Work</h1>
+    <p class="lead text-center mb-5">Explore our collection of handcrafted products:</p>
+
+    <!-- Product Categories -->
+    <div class="row mb-4">
+        <div class="col">
+            <div class="btn-group" role="group" aria-label="Product Categories" id="categoryButtons">
+                <button type="button" class="btn btn-custom category-filter" data-category="all">All</button>
+                <button type="button" class="btn btn-custom category-filter" data-category="jewelry">Jewelry</button>
+                <button type="button" class="btn btn-custom category-filter" data-category="homedecor">Home Decor</button>
+                <button type="button" class="btn btn-custom category-filter" data-category="pottery">Pottery</button>
+                <!-- Add more category buttons as needed -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Price Filtering -->
+    <div class="row mb-4">
+        <div class="col">
+            <div class="btn-group" role="group" aria-label="Price Filtering">
+                <button type="button" class="btn btn-custom price-filter" data-min-price="0" data-max-price="100">Under R100</button>
+                <button type="button" class="btn btn-custom price-filter" data-min-price="150" data-max-price="500">R150 - R500</button>
+                <button type="button" class="btn btn-custom price-filter" data-min-price="500" data-max-price="1000">R500 - R1000</button>
+                <!-- Add more price range buttons as needed -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Featured Products Section -->
+    <h2 class="text-center mb-4">Featured Products</h2>
+    <div class="row">
+        <!-- Featured Product 1 -->
+        <div class="col-md-4 mb-4 featured-product-item" data-category="jewelry">
+            <div class="card h-100 product-card">
+                <img src="~/images/product1.jpg" class="card-img-top" alt="Featured Product 1">
+                <div class="card-body">
+                    <h5 class="card-title">Vibrant Beaded Earring</h5>
+                    <p class="card-text">A pair of exquisite handcrafted beaded earrings, featuring a vibrant blend of colors and intricate patterns.</p>
+                    <p class="card-text">R100.00</p>
+                    <button class="btn btn-custom add-to-cart-btn" data-product-id="1">Add to Cart</button> <!-- Add to Cart button -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Featured Product 2 -->
+        <div class="col-md-4 mb-4 featured-product-item" data-category="homedecor">
+            <div class="card h-100 product-card">
+                <img src="~/images/product4.jpg" class="card-img-top" alt="Featured Product 2">
+                <div class="card-body">
+                    <h5 class="card-title">Classic Wooden Bookshelf</h5>
+                    <p class="card-text">This beautiful bookshelf is made of wood and has a wooden top. It features three shelves and two doors, perfect for storing and organizing your favorite books, decorative items or other belongings.</p>
+                    <p class="card-text">R750.00</p>
+                    <button class="btn btn-custom add-to-cart-btn" data-product-id="2">Add to Cart</button> <!-- Add to Cart button -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Featured Product 3 -->
+        <div class="col-md-4 mb-4 featured-product-item" data-category="pottery">
+            <div class="card h-100 product-card">
+                <img src="~/images/product9.jpg" class="card-img-top" alt="Featured Product 3">
+                <div class="card-body">
+                    <h5 class="card-title">Dotty Stack Mugs</h5>
+                    <p class="card-text">The Dotty Stack Mugs are a playful and functional addition to your kitchenware collection. This set of six ceramic mugs features a charming black and white polka dot design, perfect for adding a touch of whimsy to your morning coffee routine.</p>
+                    <p class="card-text">R350.00</p>
+                    <button class="btn btn-custom add-to-cart-btn" data-product-id="3">Add to Cart</button> <!-- Add to Cart button -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Product Grid -->
+    <h2 class="text-center mb-4">Browse Products</h2>
+    <div class="row" id="productContainer">
+        <!-- Product 1 -->
+        <div class="col-md-4 mb-4 product-item" data-category="jewelry">
+            <div class="card h-100 product-card">
+                <img src="~/images/product1.jpg" class="card-img-top" alt="Product 1">
+                <div class="card-body">
+                    <h5 class="card-title">Vibrant Beaded Earring</h5>
+                    <p class="card-text">A pair of exquisite handcrafted beaded earrings, featuring a vibrant blend of colors and intricate patterns.</p>
+                    <p class="card-text">R100.00</p>
+                    <button class="btn btn-custom add-to-cart-btn" data-product-id="4">Add to Cart</button> <!-- Add to Cart button -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Product 2 -->
+        <div class="col-md-4 mb-4 product-item" data-category="homedecor">
+            <div class="card h-100 product-card">
+                <img src="~/images/product2.webp" class="card-img-top" alt="Product 2">
+                <div class="card-body">
+                    <h5 class="card-title">Carved African Elephant Mask Wall Hanging</h5>
+                    <p class="card-text">These hand-carved wooden elephant sculptures add the earthy, exotic feel of safari lodge decor to your home.</p>
+                    <p class="card-text">R500.00</p>
+                    <button class="btn btn-custom add-to-cart-btn" data-product-id="5">Add to Cart</button> <!-- Add to Cart button -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Product 3 -->
+        <div class="col-md-4 mb-4 product-item" data-category="pottery">
+            <div class="card h-100 product-card">
+                <img src="~/images/product3.jpg" class="card-img-top" alt="Product 3">
+                <div class="card-body">
+                    <h5 class="card-title">“Cream Collection” Folded Bowl</h5>
+                    <p class="card-text">This folded bowl is part of my popular “Cream Collection” range. It is decorated with sgraffito lines which reveal the creamy colour of the clay.</p>
+                    <p class="card-text">R440.00</p>
+                    <button class="btn btn-custom add-to-cart-btn" data-product-id="6">Add to Cart</button> <!-- Add to Cart button -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Product 4 -->
+        <div class="col-md-4 mb-4 product-item" data-category="homedecor">
+            <div class="card h-100 product-card">
+                <img src="~/images/product4.jpg" class="card-img-top" alt="Product 4">
+                <div class="card-body">
+                    <h5 class="card-title">Classic Wooden Bookshelf</h5>
+                    <p class="card-text">This beautiful bookshelf is made of wood and has a wooden top. It features three shelves and two doors, perfect for storing and organizing your favorite books, decorative items or other belongings.</p>
+                    <p class="card-text">R750.00</p>
+                    <button class="btn btn-custom add-to-cart-btn" data-product-id="7">Add to Cart</button> <!-- Add to Cart button -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Product 5 -->
+        <div class="col-md-4 mb-4 product-item" data-category="jewelry">
+            <div class="card h-100 product-card">
+                <img src="~/images/product5.jpg" class="card-img-top" alt="Product 5">
+                <div class="card-body">
+                    <h5 class="card-title">Brown Beaded Necklace with Teardrop Pendant</h5>
+                    <p class="card-text">The necklace appears to be made of round, brown beads. It has a teardrop-shaped pendant at the center. The pendant appears to be made of a shiny, brown material, like wood or amber.</p>
+                    <p class="card-text">R150.00</p>
+                    <button class="btn btn-custom add-to-cart-btn" data-product-id="8">Add to Cart</button> <!-- Add to Cart button -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Product 6 -->
+        <div class="col-md-4 mb-4 product-item" data-category="pottery">
+            <div class="card h-100 product-card">
+                <img src="~/images/product6.jpg" class="card-img-top" alt="Product 6">
+                <div class="card-body">
+                    <h5 class="card-title">Whisper White Vase</h5>
+                    <p class="card-text">The Whisper White Vase is a breath of fresh air for your home décor. This elegant ceramic vase, with its clean lines and pristine white finish, adds a touch of modern minimalism to any space.</p>
+                    <p class="card-text">R640.00</p>
+                    <button class="btn btn-custom add-to-cart-btn" data-product-id="9">Add to Cart</button> <!-- Add to Cart button -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Product 7 -->
+        <div class="col-md-4 mb-4 product-item" data-category="jewelry">
+            <div class="card h-100 product-card">
+                <img src="~/images/product7.jpg" class="card-img-top" alt="Product 7">
+                <div class="card-body">
+                    <h5 class="card-title">Bohemian Bliss Bracelet</h5>
+                    <p class="card-text">The Bohemian Bliss Bracelet is a stunning celebration of color and texture. This handcrafted bracelet features a vibrant mix of glass beads, wooden accents, and a woven macrame closure.</p>
+                    <p class="card-text">R250.00</p>
+                    <button class="btn btn-custom add-to-cart-btn" data-product-id="10">Add to Cart</button> <!-- Add to Cart button -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Product 8 -->
+        <div class="col-md-4 mb-4 product-item" data-category="homedecor">
+            <div class="card h-100 product-card">
+                <img src="~/images/product8.jpg" class="card-img-top" alt="Product 8">
+                <div class="card-body">
+                    <h5 class="card-title">The Sunshine Seat</h5>
+                    <p class="card-text">The Sunshine Seat is a charming wooden accent chair that invites relaxation and unwinding. This versatile piece is perfect for both indoor and outdoor use.</p>
+                    <p class="card-text">R525.00</p>
+                    <button class="btn btn-custom add-to-cart-btn" data-product-id="11">Add to Cart</button> <!-- Add to Cart button -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Product 9 -->
+        <div class="col-md-4 mb-4 product-item" data-category="pottery">
+            <div class="card h-100 product-card">
+                <img src="~/images/product9.jpg" class="card-img-top" alt="Product 9">
+                <div class="card-body">
+                    <h5 class="card-title">Dotty Stack Mugs</h5>
+                    <p class="card-text">The Dotty Stack Mugs are a playful and functional addition to your kitchenware collection. This set of six ceramic mugs features a charming black and white polka dot design, perfect for adding a touch of whimsy to your morning coffee routine.</p>
+                    <p class="card-text">R350.00</p>
+                    <button class="btn btn-custom add-to-cart-btn" data-product-id="12">Add to Cart</button> <!-- Add to Cart button -->
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- Add more product cards as needed -->
+    </div>
+
+    <!-- Navigation buttons -->
+    <div class="text-center mt-5">
+        <a href="@Url.Action("Index", "Home")" class="btn btn-custom">Back to Home</a>
+    </div>
+</div>
+
+<!-- Shopping Cart Modal -->
+<div class="modal fade" id="shoppingCartModal" tabindex="-1" aria-labelledby="shoppingCartModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="shoppingCartModalLabel">Shopping Cart</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <!-- Cart Items -->
+                <ul class="list-group mb-3" id="cartItemList">
+                    <!-- Cart items will be dynamically added here -->
+                </ul>
+
+                <!-- Cart Summary -->
+                <div class="d-flex justify-content-between">
+                    <strong>Total:</strong>
+                    <span id="cartTotal">R0.00</span>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Continue Shopping</button>
+                <button type="button" class="btn btn-danger" id="clearCartBtn">Clear Cart</button> <!-- Clear Cart button -->
+                <button type="button" class="btn btn-custom">Checkout</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Add custom CSS for product card hover effects and animations -->
+<style>
+    .product-card {
+        transition: transform 0.3s ease;
+    }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+</style>
+
+<!-- Add jQuery for filtering products by category -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#categoryButtons button').click(function () {
+            var category = $(this).data('category');
+            $('.product-item').hide();
+            $('.featured-product-item').hide(); // Hide all featured products
+            if (category === 'all') {
+                $('.product-item').show();
+                $('.featured-product-item').show(); // Show all featured products
+            } else {
+                $('.product-item[data-category="' + category + '"]').show();
+                $('.featured-product-item[data-category="' + category + '"]').show(); // Show featured products matching the selected category
+            }
+        });
+
+        // Filter products by price range
+        $('.price-filter').click(function () {
+            var minPrice = parseFloat($(this).data('min-price'));
+            var maxPrice = parseFloat($(this).data('max-price'));
+            $('.product-item').hide();
+            $('.featured-product-item').hide(); // Hide all products
+            $('.product-item').each(function () {
+                var priceText = $(this).find('.card-text').text().trim(); // Get the text containing the price
+                var price = parseFloat(priceText.substring(priceText.indexOf('R') + 1)); // Extract the price value
+                if (!isNaN(price) && price >= minPrice && price <= maxPrice) {
+                    $(this).show();
+                }
+            });
+            $('.featured-product-item').each(function () {
+                var priceText = $(this).find('.card-text').text().trim(); // Get the text containing the price
+                var price = parseFloat(priceText.substring(priceText.indexOf('R') + 1)); // Extract the price value
+                if (!isNaN(price) && price >= minPrice && price <= maxPrice) {
+                    $(this).show();
+                }
+            }); // Show products within the selected price range
+        });
+
+
+        // Initialize cart array
+        var cartItems = [];
+
+        // Event listener for Add to Cart button clicks
+        $('.add-to-cart-btn').click(function () {
+            var productId = $(this).data('product-id'); // Get product ID
+            var productName = $(this).closest('.product-card').find('.card-title').text(); // Get product name
+            var productPrice = $(this).closest('.product-card').find('.card-text').eq(1).text(); // Get product price
+
+            // Check if the item is already in the cart
+            var existingItem = cartItems.find(item => item.id === productId);
+            if (existingItem) {
+                // If item already exists, update the quantity
+                existingItem.quantity++;
+            } else {
+                // Otherwise, add the item to the cart array
+                var item = {
+                    id: productId,
+                    name: productName,
+                    price: parseFloat(productPrice.replace('R', '').trim()),
+                    quantity: 1
+                };
+                cartItems.push(item);
+            }
+
+            // Update the shopping cart UI
+            updateCartUI(cartItems);
+        });
+
+        // Event listener for Clear Cart button click
+        $('#clearCartBtn').click(function () {
+            // Clear all items from the cart
+            var cartItems = [];
+            updateCartUI(cartItems); // Update the UI to reflect the empty cart
+        });
+
+        // Function to update the shopping cart UI
+        function updateCartUI(cartItems) {
+            var cartItemList = $('#cartItemList');
+            cartItemList.empty(); // Clear previous items
+
+            var totalPrice = 0;
+
+            // Iterate over cart items and generate HTML for each item
+            cartItems.forEach(function (item) {
+                var itemHTML = '<li class="list-group-item d-flex justify-content-between lh-sm">' +
+                    '<div>' +
+                    '<h6 class="my-0">' + item.name + '</h6>' +
+                    '<small class="text-muted">Quantity: ' + item.quantity + '</small>' +
+                    '</div>' +
+                    '<span class="text-muted">R' + (item.price * item.quantity).toFixed(2) + '</span>' +
+                    '</li>';
+
+                cartItemList.append(itemHTML); // Append item HTML to cart list
+
+                totalPrice += item.price * item.quantity; // Update total price
+            });
+
+            // Update total price in the UI
+            $('#cartTotal').text('R' + totalPrice.toFixed(2));
+        }
+    });
+</script>
